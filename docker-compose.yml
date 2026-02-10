@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   api:
-    build: energy-ingestion-api   # your existing server image
+    build:
     container_name: energy-ingestion-api
     ports:
       - "3000:3000"
