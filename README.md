@@ -25,7 +25,7 @@ npm install
 # Environment Configuration
 Create a .env file:
 PORT=3000
-DB_HOST=localhost
+DB_HOST=postgres
 DB_PORT=5432
 DB_NAME=zynetics
 DB_USER=admin
