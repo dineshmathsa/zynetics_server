@@ -1,0 +1,27 @@
+version: '3.8'
+
+services:
+  api:
+    image: energy-ingestion-api   # your existing server image
+    container_name: energy-ingestion-api
+    ports:
+      - "3000:3000"
+    env_file:
+      - .env
+    depends_on:
+      - postgres
+
+  postgres:
+    image: postgres:15            # your existing postgres image
+    container_name: energy-postgres
+    environment:
+      POSTGRES_DB: zynetics
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: admin123
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata:
